@@ -16,37 +16,37 @@ Kami membagi sistem menjadi **lima layanan (API)** independen yang merepresentas
 | **API Result** | Menghitung agregasi dan menyajikan hasil akhir polling. | **Putri** |
 | **API Sharing** | Layanan utilitas untuk men-generate link sharing. | **Muamanah** |
 
-## 2. KONTRAK API (The Blueprint)
+## 2. KONTRAK API
 
 Ini adalah format Request dan Response yang wajib ditaati oleh semua layanan agar komunikasi antar *microservice* terjamin.
 
-### Layanan: API User (Port: 5001) - [PIC: Dimas]
+### Layanan: API User (Port: 5001) - [Dimas]
 
 | Endpoint | Method | Deskripsi | JSON Request | JSON Response (Success) |
 | :--- | :--- | :--- | :--- | :--- |
 | `/login` | `POST` | Autentikasi pengguna | `{ "email": "...", "password": "..." }` | `{ "status": "ok", "user_id": 123, "token": "..." }` |
 | `/register` | `POST` | Registrasi pengguna baru | `{ "name": "...", "email": "...", "password": "..." }` | `{ "status": "created", "user_id": 123 }` |
 
-### Layanan: API Poll (Port: 5002) - [PIC: Adi]
+### Layanan: API Poll (Port: 5002) - [Adi]
 
 | Endpoint | Method | Deskripsi | JSON Request | JSON Response (Success) |
 | :--- | :--- | :--- | :--- | :--- |
 | `/polls` | `POST` | Membuat polling baru | `{ "token": "...", "question": "...", "options": [...] }` | `{ "status": "sukses", "poll_id": 456 }` |
 | `/polls` | `GET` | Mendapatkan daftar semua polling aktif | (Tidak ada) | `[ { "id": 456, "question": "..." }, ... ]` |
 
-### Layanan: API Vote (Port: 5003) - [PIC: Salsabila]
+### Layanan: API Vote (Port: 5003) - [Salsabila]
 
 | Endpoint | Method | Deskripsi | JSON Request | JSON Response (Success) |
 | :--- | :--- | :--- | :--- | :--- |
 | `/vote` | `POST` | Mengirimkan suara | `{ "user_id": 123, "poll_id": 456, "option": "A" }` | `{ "status": "vote_recorded" }` |
 
-### Layanan: API Result (Port: 5004) - [PIC: Putri]
+### Layanan: API Result (Port: 5004) - [Putri]
 
 | Endpoint | Method | Deskripsi | JSON Request | JSON Response (Success) |
 | :--- | :--- | :--- | :--- | :--- |
 | `/results/{poll_id}` | `GET` | Mengambil hasil polling spesifik | (Tidak ada) | `{ "poll_id": 456, "results": { "A": 50, "B": 75 } }` |
 
-### Layanan: API Sharing (Port: 5005) - [PIC: Muamanah]
+### Layanan: API Sharing (Port: 5005) - [Muamanah]
 
 | Endpoint | Method | Deskripsi | JSON Request | JSON Response (Success) |
 | :--- | :--- | :--- | :--- | :--- |
