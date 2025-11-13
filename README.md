@@ -2,7 +2,7 @@
 
 Proyek ini mengimplementasikan sebuah sistem terdistribusi menggunakan arsitektur **Microservices** untuk memfasilitasi pengambilan keputusan (polling) secara real-time.
 
-Status Progres: **Perencanaan Arsitektur & Proof-of-Concept Skeleton (MVP)**
+Status Pengerjaan: **Perencanaan Arsitektur & Proof-of-Concept Skeleton (MVP)**
 
 ## 1. STRUKTUR ARSITEKTUR & PEMBAGIAN TUGAS
 
