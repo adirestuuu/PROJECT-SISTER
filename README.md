@@ -6,7 +6,7 @@ Status Pengerjaan: **Perencanaan Arsitektur & Proof-of-Concept Skeleton (MVP)**
 
 ## 1. STRUKTUR ARSITEKTUR & PEMBAGIAN TUGAS
 
-Kami membagi sistem menjadi **lima layanan (API)** independen yang merepresentasikan **Application Logic (Tier 2)**. Pembagian tugas didasarkan pada hasil acak yang telah disepakati:
+Kami membagi sistem menjadi **lima layanan (API)** independen yang merepresentasikan **Application Logic (Tier 2)**.
 
 | Layanan (API) | Tujuan Utama | Penanggung Jawab |
 | :--- | :--- | :--- |
